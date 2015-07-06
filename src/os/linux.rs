@@ -1,4 +1,4 @@
-use libc::{c_int, c_uint};
+use libc::c_int;
 
 // socket
 
@@ -117,7 +117,7 @@ pub const TIOCM_DSR: c_int = 0x00000100;
 
 // usbdevfs
 
-pub const USBDEVFS_RESET: c_uint = 0x00005514;
+pub const USBDEVFS_RESET: c_int = 0x00005514;
 
 extern "C" {
     pub fn ioctl(fd: c_int, request: c_int, ...) -> c_int;
