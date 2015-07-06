@@ -1,4 +1,4 @@
-use libc::c_int;
+use libc::{c_int, c_uint};
 
 // socket
 
