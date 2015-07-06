@@ -29,6 +29,10 @@
 # include <IOKit/serial/ioss.h>
 #endif
 
+#ifdef HAVE_LINUX_USBDEVICE_FS_H
+# include <linux/usbdevice_fs.h>
+#endif
+
 
 template <typename T>
 std::string type_name(T);
@@ -424,6 +428,14 @@ int main()
     constant(TIOCM_DSR);
 #endif
 #endif // HAVE_TERMIOS_H
+
+#ifdef HAVE_LINUX_USBDEVICE_FS_H
+    header("usbdevfs");
+
+#ifdef USBDEVFS_RESET
+    constant(USBDEVFS_RESET);
+#endif
+#endif // HAVE_LINUX_USBDEVICE_FS_H
 
     return EXIT_SUCCESS;
 }

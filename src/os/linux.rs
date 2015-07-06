@@ -115,6 +115,10 @@ pub const TIOCM_RNG: c_int = 0x00000080;
 pub const TIOCM_RI: c_int = 0x00000080;
 pub const TIOCM_DSR: c_int = 0x00000100;
 
+// usbdevfs
+
+pub const USBDEVFS_RESET: c_uint = 0x00005514;
+
 extern "C" {
     pub fn ioctl(fd: c_int, request: c_int, ...) -> c_int;
 }
